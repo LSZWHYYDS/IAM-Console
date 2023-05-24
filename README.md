@@ -8,14 +8,6 @@
 yarn start
 ```
 
-然后访问：
-
-```
-http://localhost:8800/?access_token=99e4e8f8-6298-4ab4-9d63-8bd1cf43b7e4
-```
-
----
-
 ### To-do-list:
 
 - [ ] 用户中心
