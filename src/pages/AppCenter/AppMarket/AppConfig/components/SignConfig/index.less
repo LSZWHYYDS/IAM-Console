@@ -1,0 +1,24 @@
+.headAreaSelect {
+  :global {
+    .ant-checkbox-group {
+      grid-template-columns: repeat(3, 1fr);
+      font-size: 20px;
+    }
+
+    .ant-checkbox-group-item {
+      font-size: 20px;
+    }
+
+    .ant-checkbox-inner,
+    .ant-radio-inner {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner::after {
+      top: 50%;
+      left: 27%;
+    }
+  }
+}

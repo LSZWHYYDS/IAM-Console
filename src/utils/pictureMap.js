@@ -1,0 +1,90 @@
+const myMap = new Map();
+function handleStrName(str, type) {
+  // return str.slice(0, 1).toUpperCase() + str.slice(1).toUpperCase() + '.' + type;
+  return str + '.' + type;
+}
+const picture = {
+  NCC: handleStrName('NCC', 'png'),
+  ADOBE: handleStrName('ADOBE', 'png'),
+  AHA: handleStrName('AHA', 'png'),
+  AIRFLOW: handleStrName('AIRFLOW', 'png'),
+  APOLLO: handleStrName('APOLLO', 'png'),
+  ATLASSIAN: handleStrName('ATLASSIAN', 'png'),
+  AWS: handleStrName('AWS', 'png'),
+  'AWS-CN': handleStrName('AWS-CN', 'png'),
+  BAMBOOHR: handleStrName('BAMBOOHR', 'png'),
+  BITBUCKET: handleStrName('BITBUCKET', 'png'),
+  CODESIGN: handleStrName('CODESIGN', 'png'),
+  CONFLUENCE: handleStrName('CONFLUENCE', 'png'),
+  DROPBOX: handleStrName('DROPBOX', 'png'),
+  FBWORKPLACE: handleStrName('FBWORKPLACE', 'png'),
+  GITHUB: handleStrName('GITHUB', 'png'),
+  GITLAB: handleStrName('GITLAB', 'png'),
+  GSUITE: handleStrName('GSUITE', 'png'),
+  HARBOR: handleStrName('HARBOR', 'png'),
+  JAMF: handleStrName('JAMF', 'png'),
+  JENKINS: handleStrName('JENKINS', 'png'),
+  JFROG: handleStrName('JFROG', 'png'),
+  JIRA: handleStrName('JIRA', 'png'),
+  JITBIT: handleStrName('JITBIT', 'png'),
+  JUMPSERVER: handleStrName('JUMPSERVER', 'png'),
+  KIBANA: handleStrName('KIBANA', 'png'),
+  MASTODON: handleStrName('MASTODON', 'png'),
+  METABASE: handleStrName('METABASE', 'png'),
+  MIST: handleStrName('MIST', 'png'),
+  MOKA: handleStrName('MOKA', 'png'),
+  NOTION: handleStrName('NOTION', 'png'),
+  OFFICE365: handleStrName('OFFICE', 'png'),
+  OPENVPN: handleStrName('OPENVPN', 'png'),
+  PERFORCE: handleStrName('PERFORCE', 'png'),
+  RANCHER: handleStrName('RANCHER', 'png'),
+  SAP: handleStrName('SAP', 'png'),
+  SEAFILE: handleStrName('SEAFILE', 'png'),
+  SLACK: handleStrName('SLACK', 'png'),
+  SPLUNK: handleStrName('SPLUNK', 'png'),
+  TEAMBITION: handleStrName('TEAMBITION', 'png'),
+  TITA: handleStrName('TITA', 'png'),
+  VMWARE: handleStrName('VMWARE', 'png'),
+  WORDPRESS: handleStrName('WORDPRESS', 'png'),
+  WPS: handleStrName('WPS', 'png'),
+  ZABBIX: handleStrName('ZABBIX', 'png'),
+  ZOOM: handleStrName('ZOOM', 'png'),
+  ALIYUN: handleStrName('ALIYUN', 'png'),
+  BAIDU: handleStrName('BAIDU', 'png'),
+  POLYV: handleStrName('POLYV', 'png'),
+  BEISEN: handleStrName('BEISEN', 'png'),
+  ZENTAO: handleStrName('ZENTAO', 'png'),
+  WEAVER: handleStrName('WEAVER', 'png'),
+  FEILIAN: handleStrName('FEILIAN', 'png'),
+  FEISHU: handleStrName('FEISHU', 'png'),
+  FXIAOKE: handleStrName('FXIAOKE', 'png'),
+  GUANCE: handleStrName('GUANCE', 'png'),
+  GUANDATA: handleStrName('GUANDATA', 'png'),
+  HUAWEICLOUD: handleStrName('HUAWEICLOUD', 'png'),
+  EASEMOB: handleStrName('EASEMOB', 'png'),
+  HUIJU: handleStrName('HUIJU', 'png'),
+  GITLAB: handleStrName('GITLAB', 'png'),
+  JIANDAOYUN: handleStrName('JIANDAOYUN', 'png'),
+  KSYUN: handleStrName('KSYUN', 'png'),
+  MAYCUR: handleStrName('MAYCUR', 'png'),
+  MINGDAO: handleStrName('MINGDAO', 'png'),
+  QINGFLOW: handleStrName('QINGFLOW', 'png'),
+  QQMAIL: handleStrName('QQMAIL', 'png'),
+  MINGYUANYUN: handleStrName('MINGYUANYUN', 'png'),
+  TENCENTCLOUD: handleStrName('TENCENTCLOUD', 'png'),
+  '163MAIL': handleStrName('MAIL', 'png'),
+  XIAOSHOUYI: handleStrName('XIAOSHOUYI', 'png'),
+  NIGHTINGALE: handleStrName('NIGHTINGALE', 'png'),
+  SEEYON: handleStrName('SEEYON', 'png'),
+  K3Cloud: handleStrName('K3Cloud', 'png'),
+};
+
+for (let i in picture) {
+  if (picture.hasOwnProperty(i)) {
+    myMap.set(i, picture[i]);
+  }
+}
+
+export default myMap;
+
+// ZenDesk

@@ -1,0 +1,126 @@
+.leftDiv {
+  width: 60%;
+  height: 100%;
+}
+
+.mappingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px 15px;
+
+  .mappingWrapper_select {
+    width: calc(100% - 40px);
+    margin-right: 10px;
+  }
+
+  .mappingWrapper_operationBtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90px;
+    height: 40px;
+    color: #c1c1c8;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    outline: none;
+
+    .imgWrap {
+      width: 40px;
+      height: 16px;
+      margin-top: 5px;
+      background-image: url('/uc/images/glueArrow.png');
+      background-position: -144px 0;
+    }
+
+    .imgWraps {
+      width: 40px;
+      height: 16px;
+      margin-top: 5px;
+      overflow: hidden;
+      background-image: url('/uc/images/glueArrow.png');
+      background-position: -204px 0;
+    }
+
+    .icon {
+      position: relative;
+      left: -15px;
+      width: 0;
+      height: 0;
+      margin-top: 8px;
+      border: 5px solid #1662dd;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    .operary_block {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      z-index: 99999;
+      width: 260px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+
+      .ul {
+        margin-bottom: 5px;
+        padding: 0;
+        list-style-type: none;
+        li {
+          display: flex;
+          padding: 10px 0;
+          color: #212126;
+          text-align: left;
+
+          .MappingIcon {
+            overflow: hidden;
+            background-image: url('/uc/images/glueArrow.png');
+            background-position: -144px 0;
+          }
+
+          .notMappingIcon {
+            overflow: hidden;
+            background-image: url('/uc/images/glueArrow.png');
+            background-position: -204px 0;
+          }
+
+          &:first-child {
+            border-bottom: 1px solid #c1c1c8;
+          }
+
+          &:hover {
+            background: #f5f5f6;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      background-color: #f2f5ff;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 4px #a7b5ec;
+      transition: all 0.1s;
+    }
+  }
+}
+
+.rightDiv {
+  width: 40%;
+  height: 100%;
+  background: #f5f5f6;
+
+  .mappingWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,360 @@
+@import '~antd/es/style/themes/default.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: fit-content !important;
+  .ant-layout-sider .ant-menu .ant-menu-item {
+    padding-left: 42px !important;
+  }
+}
+
+.ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
+  left: unset;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Compatible with IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
+
+.table-action .text-col1 {
+  position: relative;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.footerContainer {
+  padding: 20px 0;
+  text-align: center;
+  background: #fff;
+}
+
+.pathNode .ant-breadcrumb a {
+  color: #0b7ff5;
+  outline: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.pd-5 {
+  padding: 5px;
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.pd-30 {
+  padding: 30px;
+}
+
+.pd-40 {
+  padding: 40px;
+}
+
+.pd-tb-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pd-tb-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pd-tb-15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.pd-tb-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.pd-lr-5 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.pd-lr-10 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.pd-lr-15 {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.pd-lr-20 {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.ml-40 {
+  margin-left: 40px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-55 {
+  margin-top: 55px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.footerContainer .ant-btn {
+  font-size: 16px;
+}
+
+.ant-modal {
+  top: 10px;
+}
+
+.ant-modal-body {
+  padding-top: 5px;
+}
+
+.high-light {
+  border: 2px solid #49a3ff;
+}
+
+.cert-type-box {
+  width: 50px;
+  height: 50px;
+}
+
+.sync-type-box {
+  width: 75px;
+  height: 75px;
+}
+
+.cert-type-card {
+  height: 240px;
+}
+
+.app-type-box {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.ant-menu-item .ant-menu-item-icon,
+.ant-menu-submenu-title .ant-menu-item-icon,
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .anticon {
+  font-size: 16px;
+}
+
+.clickRowStyl {
+  background-color: #fafafa;
+}
+
+//一级页面表格设置最小高度
+.minHeight > .ant-pro-card {
+  min-height: 50vh;
+}
+
+.minHeight > .ant-table-container {
+  min-height: 50vh;
+}
+
+.cell-bg {
+  background-color: #fafafa;
+}
+
+@keyframes ant-line {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.xflow-app-workspace {
+  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.editable-cell {
+  position: relative;
+}
+
+.editable-cell-value-wrap {
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.editable-row:hover .editable-cell-value-wrap {
+  padding: 4px 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+.node-over-flow {
+  width: 150px;
+  overflow: hidden; //超出隐藏
+  white-space: nowrap; //不折行
+  text-overflow: ellipsis; //溢出显示省略号
+}
+
+.v-line {
+  display: none !important;
+}
+
+#textArea {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border: 1px solid #e8e8e8;
+  outline: none;
+  resize: none;
+}
+
+.ant-list-item:hover {
+  background: rgba(60, 90, 100, 0.04);
+  cursor: pointer;
+}
+
+.dynamic-delete-button {
+  position: relative;
+  top: 4px;
+  margin: 0 8px;
+  margin-right: 0;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}

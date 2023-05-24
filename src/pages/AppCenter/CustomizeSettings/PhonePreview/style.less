@@ -1,0 +1,259 @@
+.phone {
+  position: relative;
+  width: 399px;
+  padding: 12px;
+  background: #000;
+  border-radius: 56px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  .top {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    z-index: 10;
+    width: 60px;
+    height: 6px;
+    margin-left: -30px;
+    background-color: #666;
+    border-radius: 3px;
+
+    &::after {
+      position: absolute;
+      top: -2px;
+      right: -18px;
+      width: 10px;
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      content: '';
+    }
+  }
+
+  .right {
+    position: absolute;
+    top: 156px;
+    right: -7px;
+    width: 5px;
+    height: 76px;
+    background: #000;
+    border-radius: 0 5px 5px 0;
+    content: '';
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 10;
+    width: 160px;
+    height: 5px;
+    margin-left: -80px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    content: '';
+  }
+
+  .left {
+    position: absolute;
+    top: 140px;
+    left: -7px;
+    width: 5px;
+    height: 46px;
+    background: #000;
+    border-radius: 5px 0 0 5px;
+    content: '';
+
+    &::before {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 5px;
+      height: 26px;
+      background: #000;
+      border-radius: 5px 0 0 5px;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 5px;
+      height: 46px;
+      background: #000;
+      border-radius: 5px 0 0 5px;
+      content: '';
+    }
+  }
+
+  .container {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    overflow: hidden;
+    background: #f4f4f4;
+    border-radius: 44px;
+
+    .navigationBar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      width: 100%;
+    }
+
+    .statusBar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 44px;
+      padding: 0 24px;
+      color: #000;
+      font-size: 14px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 180px;
+        height: 32px;
+        margin-left: -90px;
+        background: #000;
+        border-radius: 0 0 26px 26px;
+        content: '';
+      }
+
+      .barLeft {
+        text-align: center;
+      }
+
+      .barRight {
+        text-align: center;
+
+        span {
+          margin-right: 6px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .pageTitle {
+      // background: yellow;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 44px;
+      padding: 0 5px 0 16px;
+
+      .search {
+        flex: 1;
+        height: 32px;
+        margin-right: 12px;
+        padding: 0 12px;
+        color: #fff;
+        line-height: 32px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+
+        .anticon {
+          margin-right: 5px;
+        }
+      }
+
+      .actionsBar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 32px;
+        padding: 0 12px;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(151, 151, 151, 0.2);
+        border-radius: 16px;
+
+        > span {
+          &.dividerLine {
+            width: 1px;
+            height: 20px;
+            margin-right: 12px;
+            margin-left: 12px;
+            background: rgba(151, 151, 151, 0.2);
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    .content {
+      height: 100%;
+      overflow: scroll;
+      background: #fff;
+      user-select: none;
+    }
+  }
+}
+
+.customPage {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  .contentArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 160px;
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 16px;
+      text-align: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+    .title {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .validationTip {
+      width: 100%;
+      margin-bottom: 8px;
+      color: #6a6a6a;
+      font-size: 14px;
+    }
+    .input {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .btn {
+      width: 100%;
+      button {
+        width: 100%;
+      }
+    }
+    .tip {
+      width: 100%;
+      margin-top: 16px;
+      color: #6a6a6a;
+      font-size: 14px;
+    }
+  }
+}

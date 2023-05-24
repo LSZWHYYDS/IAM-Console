@@ -1,0 +1,129 @@
+@import '~antd/es/style/themes/default.less';
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 48px;
+  background: #fff;
+  box-shadow: 0 0 10px #f1f1f1;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-image: url('/uc/images/bg.jpeg');
+  background-position: center;
+  background-size: 100%;
+  opacity: 0.1;
+}
+
+.top {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin-right: 16px;
+  vertical-align: top;
+}
+
+.title {
+  position: relative;
+  top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: @heading-color;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  .hint {
+    font-size: 16px;
+  }
+}
+
+.desc {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  color: @text-color-secondary;
+  font-size: @font-size-base;
+}
+
+.main {
+  width: 328px;
+  margin: 0 auto;
+
+  @media screen and (max-width: @screen-sm) {
+    width: 95%;
+    max-width: 328px;
+  }
+
+  :global {
+    .@{ant-prefix}-tabs-nav-list {
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .@{ant-prefix}-btn-primary {
+      background: #001529;
+      border-color: #001529;
+
+      &:focus,
+      &:hover {
+        background: darken(#001529, 10%);
+        border-color: darken(#001529, 10%);
+      }
+    }
+  }
+
+  .icon {
+    margin-left: 16px;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #001529;
+    }
+  }
+
+  .other {
+    margin-top: 24px;
+    line-height: 22px;
+    text-align: left;
+
+    .register {
+      float: right;
+    }
+  }
+
+  .prefixIcon {
+    color: #001529;
+    font-size: @font-size-base;
+  }
+}

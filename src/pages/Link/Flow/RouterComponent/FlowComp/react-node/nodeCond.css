@@ -1,0 +1,38 @@
+.cond-box {
+  position: relative;
+  display: flex;
+  height: auto;
+  max-height: 80;
+  margin-top: 25px;
+  overflow: visible;
+}
+.cond-btn {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 10px;
+  color: #0089ff;
+  font-size: 12px;
+  line-height: 30px;
+  background: #fff;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 10%);
+  transform: translateX(-50%);
+  transform-origin: center center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.cond-btn:hover {
+   border: 1px solid #4c96f3;
+ }
