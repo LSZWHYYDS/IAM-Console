@@ -5,7 +5,7 @@ import routes from './routes';
 const { REACT_APP_ENV, zwh_test } = process.env;
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const prodGzipList = ['js', 'css'];
-
+const pxtorem = require('postcss-pxtorem');
 export default defineConfig({
   hash: true,
   antd: {},
@@ -43,14 +43,25 @@ export default defineConfig({
   },
   base: '/uc/',
   publicPath: '/uc/',
-  // openAPI: [
-  //   {
-  //     requestLibPath: "import { request } from 'umi'",
-  //     schemaPath: join(__dirname, 'oneapi.json'),
-  //     mock: false,
-  //     projectName: 'TotalInterface'
-  //   },
-  // ],
+  scripts: [{ src: '/uc/files/lib.js', defer: true }],
+  extraPostCSSPlugins: [
+    pxtorem({
+      rootValue: 192,
+      propList: ['*'],
+      selectorBlackList: [],
+      minPixelValue: 2,
+      exclude: function (filePath) {
+        if (filePath.includes('node_modules')) {
+          return true;
+        }
+        if (filePath.includes('UserManagement') && filePath.endsWith('.less')) {
+          return true;
+        }
+        return false;
+      },
+      include: /src[/\\]pages[/\\]UserCenter[/\\]UserManagement/,
+    }),
+  ],
   dynamicImport: {
     loading: '@ant-design/pro-layout/es/PageLoading',
   },
