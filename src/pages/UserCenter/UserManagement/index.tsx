@@ -30,8 +30,6 @@ import { createQueryString, exportToCsv } from '@/utils/common.utils';
 import conf from '@/utils/conf';
 import AdminResetPassword from './AdminResetPassword';
 import ImportFile from './ImportFile';
-const { Content, Sider } = Layout;
-// import { Vertify } from '@alex_xu/react-slider-vertify';
 const UserManagement: React.FC = (props: any) => {
   const actionRef = useRef<ActionType>();
   const [orgTree, setOrgTree] = useState<any>([]);
@@ -45,9 +43,7 @@ const UserManagement: React.FC = (props: any) => {
   const [inactiveEnabled, setInactiveEnabled] = useState<boolean>(false);
   const [reinviteEnabled, setReinviteEnabled] = useState<boolean>(false);
   const [passwordDlgVisible, setPasswrodDlgVisible] = useState<boolean>(false);
-  const [collapsed, setCollapsed] = useState(
-    sessionStorage.getItem('collapsedUserList') === 'true',
-  );
+
   const [importVisible, setImportVisible] = useState(false);
   const [pageSize, setPageSize] = useState(10);
   const [total, setTotal] = useState(0);
@@ -295,23 +291,20 @@ const UserManagement: React.FC = (props: any) => {
     return (
       <div
         style={{
-          width: '200px',
           padding: '24px 10px 10px 0',
           background: '#fff',
-          border: '1px solid #f1f2f6',
+          border: '1px solid #f1  f2f6',
         }}
       >
-        {orgTree && orgTree.length > 0 ? (
-          <OrgTree
-            checkable={false}
-            selectable={true}
-            orgs={orgTree}
-            userTotal={total}
-            handleOnSelect={(values) => onSelect(values)}
-            afterEdit={handleGetOrgsList}
-            isShow={true}
-          />
-        ) : null}
+        <OrgTree
+          checkable={false}
+          selectable={true}
+          orgs={orgTree}
+          userTotal={total}
+          handleOnSelect={(values) => onSelect(values)}
+          afterEdit={handleGetOrgsList}
+          isShow={true}
+        />
       </div>
     );
   };
@@ -345,153 +338,160 @@ const UserManagement: React.FC = (props: any) => {
     ];
 
     return (
-      <ProTable<UserType, TableListPagination>
-        actionRef={actionRef}
-        rowKey={'username'}
-        search={false}
-        className="minHeight"
-        headerTitle={orgInfo ? orgInfo.name : '组织架构'}
-        toolbar={{
-          title: (
-            <Space>
-              <Dropdown menu={{ items: itemss, onClick: onMenuClick }} placement="bottom">
-                <Button type="primary">
-                  <PlusOutlined />
-                  添加用户
-                </Button>
-              </Dropdown>
-              <Button
-                type="link"
-                size="small"
-                style={{ height: 'auto' }}
-                disabled={!activeEnabled}
-                onClick={() => handelChangeUsersStatus('ACTIVE')}
-              >
-                <PlayCircleOutlined />
-                <br />
-                启用
-              </Button>
-              <Button
-                type="link"
-                size="small"
-                style={{ height: 'auto' }}
-                disabled={!inactiveEnabled}
-                onClick={() => handelChangeUsersStatus('SUSPENDED')}
-              >
-                <MinusCircleOutlined />
-                <br />
-                禁用
-              </Button>
-              <Popconfirm
-                key="DELETE"
-                placement="topRight"
-                title={'删除用户是不可逆操作，您确定删除吗？'}
-                onConfirm={() => handelDeleteUsers()}
-                okText="确定"
-                cancelText="取消"
-                disabled={!delEnabled}
-              >
-                <Button type="link" size="small" style={{ height: 'auto' }} disabled={!delEnabled}>
-                  <DeleteOutlined />
+      <div style={{ minHeight: '70vh', width: '75vw' }} className="user_manger">
+        <ProTable<UserType, TableListPagination>
+          actionRef={actionRef}
+          rowKey={'username'}
+          search={false}
+          className="minHeight"
+          headerTitle={orgInfo ? orgInfo.name : '组织架构'}
+          toolbar={{
+            title: (
+              <Space>
+                <Dropdown menu={{ items: itemss, onClick: onMenuClick }} placement="bottom">
+                  <Button type="primary">
+                    <PlusOutlined />
+                    添加用户
+                  </Button>
+                </Dropdown>
+                <Button
+                  type="link"
+                  size="small"
+                  style={{ height: 'auto' }}
+                  disabled={!activeEnabled}
+                  onClick={() => handelChangeUsersStatus('ACTIVE')}
+                >
+                  <PlayCircleOutlined />
                   <br />
-                  删除
+                  启用
                 </Button>
-              </Popconfirm>
-              <Button type="link" size="small" style={{ height: 'auto' }} onClick={handleExport}>
-                <ShareAltOutlined />
-                <br />
-                导出
-                <a id="exportLink" target="_blank" className="hidden" />
-              </Button>
-              <Button
-                type="link"
-                size="small"
-                style={{ height: 'auto' }}
-                disabled={!reinviteEnabled}
-                onClick={() => handleReinviteUser()}
-              >
-                <UserAddOutlined />
-                <br />
-                重新邀请
-              </Button>
-              <Button
-                type="link"
-                size="small"
-                style={{ height: 'auto' }}
-                disabled={!reinviteEnabled}
-                onClick={() => onResetPassword()}
-              >
-                <LockOutlined />
-                <br />
-                密码重置
-              </Button>
-            </Space>
-          ),
-          multipleLine: true,
-          settings: [],
-          search: {
-            onSearch: (value: string) => {
-              setUserKeyword(value);
-              actionRef.current?.reset?.();
-              actionRef.current?.reload?.();
+                <Button
+                  type="link"
+                  size="small"
+                  style={{ height: 'auto' }}
+                  disabled={!inactiveEnabled}
+                  onClick={() => handelChangeUsersStatus('SUSPENDED')}
+                >
+                  <MinusCircleOutlined />
+                  <br />
+                  禁用
+                </Button>
+                <Popconfirm
+                  key="DELETE"
+                  placement="topRight"
+                  title={'删除用户是不可逆操作，您确定删除吗？'}
+                  onConfirm={() => handelDeleteUsers()}
+                  okText="确定"
+                  cancelText="取消"
+                  disabled={!delEnabled}
+                >
+                  <Button
+                    type="link"
+                    size="small"
+                    style={{ height: 'auto' }}
+                    disabled={!delEnabled}
+                  >
+                    <DeleteOutlined />
+                    <br />
+                    删除
+                  </Button>
+                </Popconfirm>
+                <Button type="link" size="small" style={{ height: 'auto' }} onClick={handleExport}>
+                  <ShareAltOutlined />
+                  <br />
+                  导出
+                  <a id="exportLink" target="_blank" className="hidden" />
+                </Button>
+                <Button
+                  type="link"
+                  size="small"
+                  style={{ height: 'auto' }}
+                  disabled={!reinviteEnabled}
+                  onClick={() => handleReinviteUser()}
+                >
+                  <UserAddOutlined />
+                  <br />
+                  重新邀请
+                </Button>
+                <Button
+                  type="link"
+                  size="small"
+                  style={{ height: 'auto' }}
+                  disabled={!reinviteEnabled}
+                  onClick={() => onResetPassword()}
+                >
+                  <LockOutlined />
+                  <br />
+                  密码重置
+                </Button>
+              </Space>
+            ),
+            multipleLine: true,
+            settings: [],
+            search: {
+              onSearch: (value: string) => {
+                setUserKeyword(value);
+                actionRef.current?.reset?.();
+                actionRef.current?.reload?.();
+              },
+              style: {
+                width: '300px',
+              },
+              placeholder: '姓名/用户名/邮箱/手机',
+              allowClear: true,
             },
-            style: {
-              width: '300px',
+            filter: (
+              <>
+                {orgInfo?.name ? (
+                  <Alert
+                    message={`当前为 ${orgInfo?.name} 部门用户`}
+                    type="info"
+                    style={{ width: '100%' }}
+                  />
+                ) : null}
+              </>
+            ),
+          }}
+          request={async (pagination) => {
+            let params: any = {
+              size: pagination?.pageSize,
+              page: pagination?.current,
+              attrs:
+                'sub,name,org_ids,email,username,status,phone_number,readonly,come_from,picture,created_mode,end_date',
+            };
+
+            if (userKeyword) {
+              params = { ...params, q: userKeyword };
+            }
+
+            if (orgKey) {
+              params = { ...params, org_id: orgKey };
+            }
+
+            const result: any = await getUserList(params);
+            setTotal(result?.total);
+            return result;
+          }}
+          columns={columns}
+          tableAlertRender={false}
+          rowSelection={{
+            selectedRowKeys,
+            onChange: (keys, rows) => {
+              handleRowSelect(keys, rows);
             },
-            placeholder: '姓名/用户名/邮箱/手机',
-            allowClear: true,
-          },
-          filter: (
-            <>
-              {orgInfo?.name ? (
-                <Alert
-                  message={`当前为 ${orgInfo?.name} 部门用户`}
-                  type="info"
-                  style={{ width: '100%' }}
-                />
-              ) : null}
-            </>
-          ),
-        }}
-        request={async (pagination) => {
-          let params: any = {
-            size: pagination?.pageSize,
-            page: pagination?.current,
-            attrs:
-              'sub,name,org_ids,email,username,status,phone_number,readonly,come_from,picture,created_mode,end_date',
-          };
-
-          if (userKeyword) {
-            params = { ...params, q: userKeyword };
-          }
-
-          if (orgKey) {
-            params = { ...params, org_id: orgKey };
-          }
-
-          const result: any = await getUserList(params);
-          setTotal(result?.total);
-          return result;
-        }}
-        columns={columns}
-        tableAlertRender={false}
-        rowSelection={{
-          selectedRowKeys,
-          onChange: (keys, rows) => {
-            handleRowSelect(keys, rows);
-          },
-        }}
-        pagination={{ pageSize, showSizeChanger: true, onChange: onPageSize }}
-      />
+          }}
+          pagination={{ pageSize, showSizeChanger: true, onChange: onPageSize }}
+        />
+      </div>
     );
   };
   const onCloseImportFile = () => {
     setImportVisible(false);
   };
-  const onCollapsed = (value: any) => {
-    setCollapsed(value);
-    sessionStorage.setItem('collapsedUserList', value);
-  };
+  // const onCollapsed = (value: any) => {
+  //   setCollapsed(value);
+  //   sessionStorage.setItem('collapsedUserList', value);
+  // };
   return (
     <PageContainer title={false}>
       <AdminResetPassword
@@ -501,18 +501,10 @@ const UserManagement: React.FC = (props: any) => {
       />
       <Layout style={{ minHeight: '100vh' }}>
         <ImportFile visible={importVisible} onClose={onCloseImportFile} />
-        <Layout className="site-layout">
-          <Content>{renderTable()}</Content>
-        </Layout>
-        <Sider
-          collapsedWidth={0}
-          theme="light"
-          collapsible
-          collapsed={collapsed}
-          onCollapse={(value) => onCollapsed(value)}
-        >
-          {renderGroupTree()}
-        </Sider>
+        <div style={{ display: 'flex' }}>
+          <div>{renderTable()}</div>
+          <div style={{ marginLeft: 5, flex: 1, maxHeight: '100%' }}>{renderGroupTree()}</div>
+        </div>
       </Layout>
     </PageContainer>
   );

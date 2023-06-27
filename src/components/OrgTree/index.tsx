@@ -370,7 +370,6 @@ const OrgTree: React.FC<any> = (props) => {
               icon: false,
               nodeDraggable: canDraggable,
             }}
-            // blockNode
             checkable
             showLine={{ showLeafIcon: false }}
             defaultExpandedKeys={['_root']}
